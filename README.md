@@ -17,6 +17,8 @@ This code will works all the time during the live matchs.No more use of cricbuzz
     open command line or terminal
     ~ docker build -f DockerFile -t cricinfo .
     ~ docker run -it cricinfo
+    
+    Ctrl + C to stop the process
     Now enjoy the live scores......:)
 
 ## Credits 
