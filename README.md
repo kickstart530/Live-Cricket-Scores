@@ -10,5 +10,14 @@ This code will works all the time during the live matchs.No more use of cricbuzz
     ~ python Criclive.py
     Now enjoy the live scores......:)
 
+## How to use with Docker
+    open command line or terminal
+    ~ docker build -f DockerFile -t cricinfo .
+    ~ docker run -it cricinfo
+    Now enjoyt the live scores......:)
+
+## Credits 
+    credit to link https://www.wintellect.com/containerize-python-app-5-minutes/ for help with intial docker file
+
 ## DEMO
 ![Alt Text](runGif.gif)
