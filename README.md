@@ -19,7 +19,6 @@ This code will works all the time during the live matchs.No more use of cricbuzz
     ~ docker run -it cricinfo
     
     Ctrl + C to stop the process
-    Now enjoy the live scores......:)
 
 ## Credits 
     credit to link https://www.wintellect.com/containerize-python-app-5-minutes/ for help with intial docker file
