@@ -1,3 +1,6 @@
+# Original Source code from datta07/Live-Cricket-Scores
+https://github.com/datta07/Live-Cricket-Scores
+
 # Live-Cricket-Scores
 Command line interface program for fastest live cricket scores with simple Python program.
 
