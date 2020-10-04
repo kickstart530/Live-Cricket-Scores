@@ -3,21 +3,24 @@ import json
 import ssl
 import sys
 import os
-os.system('cls')
+os.system('clear')
 
 
 class CricLive:
 	def __init__(self,url):
-		self.url=url
-		self.ws = websocket.create_connection(self.url,sslopt={"cert_reqs": ssl.CERT_NONE})
-		self.data={}
-		self.match=None
-		self.indicates={"B":"Ball Started","BS":"Bowler Stopped","WK":"Wicket","OC":"Over Completed","WD":"Wide","FH":"Free Hit","C":"Cancel"}
-		self.params={"p1":"Player1","p2":"Player2","b1s":"player1Score","b2s":"player2Score","bw":"bowler","lw":"lastWicket",
+		try:
+			self.url=url
+			self.ws = websocket.create_connection(self.url,sslopt={"cert_reqs": ssl.CERT_NONE})
+			self.data={}
+			self.match=None
+			self.indicates={"B":"Ball Started","BS":"Bowler Stopped","WK":"Wicket","OC":"Over Completed","WD":"Wide","FH":"Free Hit","C":"Cancel"}
+			self.params={"p1":"Player1","p2":"Player2","b1s":"player1Score","b2s":"player2Score","bw":"bowler","lw":"lastWicket",
 					 "i1":"innings1Score","i2":"innings2Score","i":"inningsNow","pb":"playerBoard","cs":"DisplayCard",
 					 "os":"position"}
-		self.initialLoad() # Loading the preLoaders
-		self.initialSetup() # Loading for initial setup
+			self.initialLoad() # Loading the preLoaders
+			self.initialSetup() # Loading for initial setup
+		except KeyboardInterrupt as ex:
+    			print('\n\r Have a great time ahead! See you soon!')
 
 	def initialLoad(self):
 		self.ws.recv()
@@ -63,11 +66,14 @@ class CricLive:
 		self.printScren()
 
 	def continous_update(self):
-		while True:
-			self.update_process()
-
+		try:
+			while True:
+				self.update_process()
+		except KeyboardInterrupt as ex:
+			print('\n\r Have a great time ahead! See you soon!')
+	
 	def printScren(self):
-		os.system('cls')
+		os.system('clear')
 		data=self.data
 		player1Score=data['player1Score'].split(',')
 
